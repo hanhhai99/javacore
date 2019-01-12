@@ -25,7 +25,7 @@ public class Bai5_11 {
                     int n = sc.nextInt();
                 int tong = 0;
                 int i;
-            for (i=0; i<=n; i++) {
+            for (i=0; i<n; i++) {
                 tong += Math.pow(x, (2*i +1));
             }
         System.out.println("tong la " +tong);
