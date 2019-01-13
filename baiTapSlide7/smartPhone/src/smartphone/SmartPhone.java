@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package baitapslide7;
+package smartphone;
 
 /**
  *
  * @author ASUS
  */
-public class BaiTapSlide7 {
+public class SmartPhone {
 
     /**
      * @param args the command line arguments
