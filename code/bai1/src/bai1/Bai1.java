@@ -28,14 +28,15 @@ public class Bai1 {
             count++;
         System.out.println("gia tri la");
         if(count == 1){
-            System.out.println("la hang don vi");
+            System.out.println("la hang don vi ");
         }
         if(count == 2){
-            System.out.println("la hang chuc");
+            System.out.println("la hang chuc ");
         }
         if(count == 3){
-            System.out.println("la hang tram");
+            System.out.println("la hang tram ");
         }
+        System.out.println("gia tri la " +temp);
         }
     }
     
