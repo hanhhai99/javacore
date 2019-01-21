@@ -9,9 +9,11 @@ package bai1;
  *
  * @author ASUS
  */
-public class bai2 extends Bai1 {
+public class bai2  {
     
-    int convertNumToString(int num){
+    public static int convertNumToString(int num){
+    
+    
         int s = 0;
             if (s==1) {
                 System.out.println("mot");
@@ -44,5 +46,4 @@ public class bai2 extends Bai1 {
         return s;
 	
 }
-
-}
+    }
