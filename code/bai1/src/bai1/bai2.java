@@ -5,11 +5,14 @@
  */
 package bai1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ASUS
  */
 public class bai2  {
+    
     
     public static int convertNumToString(int num){
     
@@ -46,4 +49,19 @@ public class bai2  {
         return s;
 	
 }
+    public static int chuyendoiHangthanhChuoi (int num){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("nhap so n");
+            int n = sc.nextInt();
+        String doc;
+        switch (n) {
+            case 1:
+                
+            
+        }
+        
+        return 0;
+        
+    }
+    
     }

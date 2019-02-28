@@ -12,12 +12,10 @@ import java.util.Scanner;
  * @author ASUS
  */
 public class smartPhone extends product {
-     public static void main(String[] args) {
-        // TODO code application logic here
-    }
      
-     private boolean hasCam;
-        private int sim;
+     
+    private boolean hasCam;
+    private int sim;
     private boolean hasCame;
         
     public smartPhone() {
@@ -49,18 +47,20 @@ public class smartPhone extends product {
     public void addNew(){
         super.addNew();
         Scanner sc = new Scanner(System.in);
-        System.out.print("Kiểm tra hasCame:(1/0)");
+        System.out.print("kiem tra hasCame:(1/0)");
         int choice = sc.nextInt();
         this.hasCame = choice == 1?true:false;
-        System.out.print("Nhập số sim:");
+        System.out.print("nhap so sim:");
         this.sim = sc.nextInt();
     }
     @Override
     public void prinInfo(){
         super.prinInfo();
-        if(this.hasCame ==true) System.out.println("Co camera");
-        else System.out.println("Ko co camera");
-        System.out.println("Sim: "+ sim);
+        if(this.hasCame ==true) 
+            System.out.println("co camera");
+        else {
+            System.out.println("khong co camera");
+            System.out.println("sim: "+ sim);
     }
-    
+    }   
 }

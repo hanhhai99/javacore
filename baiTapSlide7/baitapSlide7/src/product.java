@@ -12,11 +12,8 @@ import java.util.Scanner;
  * @author ASUS
  */
 public class product  {
-     public static void main(String[] args) {
-        // TODO code application logic here
-    }
      
-     private int id;
+    private int id;
     private String name;
     private double price;
     private int quantity;
@@ -79,7 +76,7 @@ public class product  {
         System.out.println("Gia san pham: "+getPrice());
         System.out.println("So luong: " + getQuantity());
     }   
-    
+
     
     
 }

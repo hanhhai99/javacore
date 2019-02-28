@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class camera extends product {
      public static void main(String[] args) {
         // TODO code application logic here
-    }
-     
+    
+     }
      private boolean wifi;
     
     
@@ -41,7 +41,7 @@ public class camera extends product {
     public void addNew() {
         super.addNew();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Kiểm tra wifi:(1/0)");
+        System.out.println("kiem tra wifi:(1/0)");
         int choice = sc.nextInt();
         this.wifi = choice == 1?true:false;
     }
@@ -49,10 +49,13 @@ public class camera extends product {
 @Override
 public void prinInfo(){
         super.prinInfo();
-        if(this.wifi == true) System.out.println("Co wifi");
-        else System.out.println("ko co wifi");
+        if(this.wifi == true) 
+            System.out.println("co wifi");
+        else {
+            System.out.println("khong co wifi");
+        }
     }
     
      
-    
+
 }
