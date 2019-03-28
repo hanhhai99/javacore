@@ -1,0 +1,39 @@
+
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author ASUS
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        System.out.print("Student hay employee: (1/0)");
+        String choice = new Scanner(System.in).nextLine();
+        Manager instance = null;
+        if(choice.toUpperCase().equals("1")) {
+            instance = new StudentManager();
+        }
+        else if(choice.toUpperCase().equals("0")) {
+            instance = new EmployeeManager();
+        }
+        else {
+            System.out.println("not valid");
+        }
+        if(instance == null) {
+            Menu menu = new Menu(instance);
+            menu.display();
+        }
+    }
+    
+}
