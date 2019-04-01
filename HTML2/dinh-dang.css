@@ -1,0 +1,21 @@
+.head { 
+  list-style-type: none;
+  overflow: hidden;
+  background-color: red;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding  : 30px;
+  text-decoration: none;
+
+}
+
+
+}
