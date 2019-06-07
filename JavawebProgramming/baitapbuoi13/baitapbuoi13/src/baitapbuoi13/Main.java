@@ -5,6 +5,8 @@
  */
 package baitapbuoi13;
 
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,31 +20,69 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        try{
-            Scanner sc = new Scanner(System.in);
-            System.out.println("    QUIZ ONLINE");
-            System.out.println("==============");
-            System.out.print("nhap email: ");
-            String email = sc.nextLine();
-            System.out.print("nhap pass: ");
-            String pass = sc.nextLine();
-            
+         try {
+            // TODO code application logic here
+            Scanner input = new Scanner(System.in);
+            System.out.println("   QUIZ ONLINE   ");
+            System.out.println("------------------");
+            System.out.print("Enter Email: ");
+            String email = input.nextLine();
+
+            System.out.print("Enter Pass: ");
+            String pass = input.nextLine();
+
             StudentManager sm = new StudentManager();
-            boolean checkLogin = sm.login(email, pass);
-            if(checkLogin) {
-                System.out.println("succes");
-                
+            Student s = sm.login(email, pass);
+
+            if (s != null) {
+                System.out.println("LOGIN SUCCESS! PRESS ANY KEY TO START QUIZ");
+                input.nextLine();
+                boolean completed = sm.isCompleted(s);
+                if (completed) {
+                    System.out.println("YOU HAVE COMPLETED THE TEST.");
+                    System.out.print("DO YOU WANT TO DO IT AGAIN (Y/N): ");
+                    String cont = input.nextLine();
+                    if (cont.toLowerCase().equals("y")) {
+                        sm.resetQuiz(s);
+                        startQuiz(input, sm, s);    
+                    }
+                } else {
+                    startQuiz(input, sm, s);
+                }
+            } else {
+                System.out.println("LOGIN FAIL!");
             }
-            
-            else {
-                System.out.println("fail!");
-            }
-                    
-            }catch(Exception e) {
-                
-            e.printStackTrace();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
-    
+
+    public static void startQuiz(Scanner input, StudentManager sm, Student s) throws ClassNotFoundException, SQLException {
+        System.out.println("---------------");
+        QuestionManager qm = new QuestionManager();
+        List<Question> questions = qm.getQuestions();
+        int countCorr = 0;
+        int index = 1;
+        for (Question q : questions) {
+            System.out.printf("Question %d/%d \n", index++, questions.size());
+            System.out.println(q);
+            System.out.print("Your answer > ");
+            String answer = input.nextLine();
+            sm.addAnswer(s, q, answer);
+            if (answer.toLowerCase().equals(q.getCorrect().toLowerCase())) {
+                countCorr++;
+            }
+        }
+        System.out.println("Congratulation!");
+        System.out.printf("Your result: %d/%d \n", countCorr, questions.size());
+        System.out.print("See Detail (Y/N) > ");
+
+        String cont = input.nextLine();
+        if (cont.toLowerCase().equals("y")) {
+            sm.printResult(s);
+        }
+    }
+
 }
     
