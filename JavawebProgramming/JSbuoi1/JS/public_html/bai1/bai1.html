@@ -1,0 +1,56 @@
+<!PE html:t 
+    >
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Javascipt căn bản</h1>
+        <h2>Máy tính đơn giản</h2>
+        <form>
+            So thu 1:<input type="text" id="number1"/>
+            <input type="button" value="+"/>
+            <input type="button" value="-"/><br/>
+            So thu 2:<input type="text" id="number2"/>
+            <input type="button" value="*"/>
+            <input type="button" value="/"/><br/>
+            <label>Kết quả : </label>
+            <input id="rs" readonly />
+            <script>
+            function calc(opt) {
+                var num1Ele = document.getElementById('num1');
+                var num1 = parseFloat(num1Ele.value);
+                
+                var num2Ele = document.getElementById('num2');
+                var num2 = parseFloat(num2Ele.value);
+                
+                
+                var kq = 0;
+                switch(opt) {
+                    case '+': 
+                        kq = num1 + num2;
+                        break;
+                    case '-': 
+                        kq = num1 - num2;
+                        break;
+                    case '*': 
+                        kq = num1 * num2;
+                        break;
+                    case '/': 
+                        kq = num1 / num2;
+                        break;        
+                }
+                var rsEle = document.getElementById('rs');
+                rsEle.value = kq;
+            }
+        </script>
+        </form>
+    </body>
+</html>
